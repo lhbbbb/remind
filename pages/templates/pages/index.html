@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+{% block body %}
+{% for ele in post %}
+<!-- <a href="/pages/detail/{{ele.id}}">{{ele.id}}</a> -->
+<a href="{% url 'pages:detail' ele.id %}">{{ele.id}}</a>
+<p>제목: {{ele.title}}</p>
+<p>내용: {{ele.content}}</p>
+<p><img src="{{ele.image_url}}" alt=""></p>
+<p>만든 날짜: {{ele.created_at}}</p>
+<p>업데이트 날짜: {{ele.updated_at}}</p>
+{% endfor %}
+{% endblock %}

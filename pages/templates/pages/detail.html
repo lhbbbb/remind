@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block body %}
+<p>제목: {{post.title}}</p>
+<p>내용: {{post.content}}</p>
+<p><img src="{{post.image_url}}" alt=""></p>
+<p>만든 날짜: {{post.created_at}}</p>
+<p>업데이트 날짜: {{post.updated_at}}</p>
+<form action="{% url 'pages:edit' post.id %}">
+    <button type="submit" class="btn btn-success">수정</button>  
+</form>
+<form action="{% url 'pages:delete' post.id %}">
+    <button type="submit" class="btn btn-danger">삭제</button>
+</form>
+{% endblock %}
